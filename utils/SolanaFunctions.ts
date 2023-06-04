@@ -6,8 +6,13 @@ import {
   sendAndConfirmTransaction,
   LAMPORTS_PER_SOL,
 } from "@solana/web3.js";
-import { useWallet } from '@solana/wallet-adapter-react';
 
+//Add the solana property to window
+declare global {
+  interface Window {
+    solana: any;
+  }
+}
 
 export const connectToWallet = async () => {
   const connection = new Connection(
